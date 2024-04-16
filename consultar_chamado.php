@@ -47,6 +47,12 @@
               foreach ($calls as $call) {
                 $conteud = explode("*§§*", $call);
 
+                if ($_SESSION['permision'] == 2){
+                  if($_SESSION['id'] != $conteud[0]){
+                    continue;
+                  }
+                }
+
                 if (count($conteud) < 3) {
                   continue;
                 }
@@ -55,9 +61,9 @@
               
               <div class="card mb-3 bg-light">
                 <div class="card-body">
-                  <h5 class="card-title"><?=$conteud[0]?></h5>
-                  <h6 class="card-subtitle mb-2 text-muted"><?=$conteud[1]?></h6>
-                  <p class="card-text"><?=$conteud[2]?></p>
+                  <h5 class="card-title"><?=$conteud[1]?></h5>
+                  <h6 class="card-subtitle mb-2 text-muted"><?=$conteud[2]?></h6>
+                  <p class="card-text"><?=$conteud[3]?></p>
 
                 </div>
               </div>

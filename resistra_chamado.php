@@ -1,9 +1,12 @@
 <?php 
+    session_start();
+
     $title = $_POST['titulo'];
     $category = $_POST['categoria'];
     $descripition = $_POST['descricao'];
+    $id = $_SESSION['id'];
 
-    $lsit = array($title, $category, $descripition);
+    $lsit = array($id, $title, $category, $descripition);
     $string = implode('*§§*', $lsit);
     $data = $string. PHP_EOL;
 
